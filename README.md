@@ -1,6 +1,6 @@
 # 인문학 탐구모임 - 모락모락
 
-Superuser
+< Superuser >
 
 ID : morakmorak
 
