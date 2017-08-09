@@ -5,13 +5,11 @@ from .models import MyNovel
 # Create your views here.
 def mynovel(request):
     my_novel = MyNovel.objects.all()
-    return render(request, 'hub/mynovel.html', {
-        'mynovel': my_novel,
-        })
+    return render(request, 'hub/mynovel.html')
 
 
 def sharednovel(request):
     shared_novel = MyNovel.objects.all()
-    return render(request, 'hub/sharednovel/html',{
+    return render(request, 'hub/sharednovel.html',{
         'sharednovel': shared_novel
         })
