@@ -37,15 +37,17 @@
                 <tbody>
                     {% for post in novel_list %}
                     <tr>
-                        <td>{{ post.id }}</td>
-                        <td>
-                            {{ post.title }}
-                        </a></td>
+                        {% if post.is_shared %}
+                            <td>{{ post.id }}</td>
+                            <td>
+                                {{ post.title }}
+                            </a></td>
 
-                        <td><small>by {{ post.author }}</small></td>
-                        <td><small>at {{ post.updated_at }}</small></td>
-                        <td><small>{{ post.is_shared }}</small></td>
-                    </tr>
+                            <td><small>by {{ post.author }}</small></td>
+                            <td><small>at {{ post.updated_at }}</small></td>
+                            <td><small>{{ post.is_shared }}</small></td>
+                        </tr>
+                        {% endif %}
                     {% endfor %}
                 </tbody>
             </table>
