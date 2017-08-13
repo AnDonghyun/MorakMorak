@@ -8,11 +8,51 @@
     <input type="submit" value="검색" class="btn btn-primary" />
 </form>   
 -->
+<div class="container">
+    <div class ="row">
+        <div class="col-sm-12">
+            <div class="alert alert-info">         
 
-<div class ="row">
-    <div class="col-sm-12">
-        <div class="alert alert-info">         
-          
+            </div>
+
+            
+
+            <p>
+                <form action = "" method="get">
+                    <input type="text" name="q" value="{{ q }}" />
+                    <input type="submit" value="검색" class="btn btn-primary"/>
+                </form>
+            </p>
+
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>author</th>
+                        <th>updated_at</th>
+                        <th>공유</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in novel_list %}
+                    <tr>
+                        <td>{{ post.id }}</td>
+                        <td>
+                            {{ post.title }}
+                        </a></td>
+
+                        <td><small>by {{ post.author }}</small></td>
+                        <td><small>at {{ post.updated_at }}</small></td>
+                        <td><small>{{ post.is_shared }}</small></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <hr/>
+            <a href="{% url "hub:hub_list" %}" class="btn btn-primary">게시판 목록</a>
         </div>
+    </div>
+</div>
 
 {% endblock %}
