@@ -2,6 +2,7 @@
 <html>
 <head>
  <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>모락모락</title>
  <!-- 기본 bootstrap -->
  {# <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> #}
@@ -22,6 +23,8 @@
  </style>
 
  <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
  <!--[if lt IE 9]>
@@ -43,6 +46,22 @@
         <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="{% url "hub:hub_list" %}" class="dropdown-toggle" data-toggle="dropdown">Hub <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url "hub:my_novel" %}">나만의 소설 쓰기</a></li>
+                    <li><a href="{% url "hub:shared_novel" %}">공유된 소설 보기</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Practice <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">릴레이 소설 쓰기</a></li>
+                    <li><a href="#">사진 보고 서술하기</a></li>
+                    <li><a href="#">변명집 작성하기</a></li>
+                    <li><a href="#">VS 소설 쓰기</a></li>
+                </ul>
+            </li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
