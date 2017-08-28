@@ -38,7 +38,7 @@
                     {% for post in novel_list %}
                     <tr>
                         <td>{{ post.id }}</td>
-                        <td>
+                        <td><a href="{% url "hub:post_detail" post.id %}">
                             {{ post.title }}
                         </a></td>
 
@@ -51,6 +51,7 @@
             </table>
             <hr/>
             <a href="{% url "hub:hub_list" %}" class="btn btn-primary">게시판 목록</a>
+            <a href="{% url "hub:post_new" %}" class="btn btn-default">새글쓰기</a>
         </div>
     </div>
 </div>
