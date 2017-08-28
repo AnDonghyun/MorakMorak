@@ -1,6 +1,7 @@
 # hub/models.py
 import re
 from django import forms
+from django.forms import ValidationError
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.db import models
@@ -28,7 +29,7 @@ class MyNovel(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('hub:mynovel', args=[self.pk])
+        return reverse('hub:post_detail', args=[self.id])
 
 
 
