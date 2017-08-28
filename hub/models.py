@@ -14,6 +14,13 @@ class MyNovel(models.Model):
     is_shared = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    tags = models.CharField(max_length=100, blank=True)
+    STATUS_CHOICES = (
+        ('d', '작성중'),
+        ('f', '작성완료'),
+        ('p', '출판'),
+    )
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES) 
 
 
     def __str__(self):
