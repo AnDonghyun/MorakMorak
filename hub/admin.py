@@ -6,6 +6,6 @@ from .models import MyNovel
 
 @admin.register(MyNovel)
 class HubAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'author', 'is_shared', 'created_at']
+    list_display = ['id', 'title', 'author', 'created_at', 'status']
     list_display_links = ['title']
-    list_editable = ['is_shared']
+    list_editable = ['status']
