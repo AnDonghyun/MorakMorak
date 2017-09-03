@@ -1,18 +1,26 @@
 # practice/models.py
 from django.db import models
-from django.contrib.auth.models import User
+from django.shortcuts import reverse
 
 
 class StartRelayNovel(models.Model):
-    author = models.OneToOneField(User)
     title = models.CharField(max_length=100, verbose_name='소설 제목') #릴레이 소설 제목
     content = models.TextField(help_text='새로운 릴레이 소설의 문을 열어보세요!') #첫번째로 작성된 소설
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
 
+   # def save(self, commit=True):
+    #    post = StartRelayNovel(**self.cleaned_data)
+     #   if commit:
+      #      post.save()
+       #     return post
+
+    def get_absolute_url(self):
+        return reverse('practice:post_detail', args=[self.id])
+
+    
 class RelayNovelSequel(models.Model):
-    author = models.OneToOneField(User)
     StartRelayNovel = models.ForeignKey(StartRelayNovel)
     summary = models.TextField(help_text='이어지는 내용을 짧게 요약해 주세요!')
     content = models.TextField(help_text='재치있게 소설을 이어나가 보세요!')

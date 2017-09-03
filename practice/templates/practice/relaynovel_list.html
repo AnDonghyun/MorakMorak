@@ -39,7 +39,6 @@
                     <tr>
                         <td>{{ StartRelayNovel.id }}</td>
                         <td>{{ StartRelayNovel.title }}</a></td>
-                        <td><small>by {{ StartRelayNovel.author }}</small></td>
                         <td><small>at {{ StartRelayNovel.updated_at }}</small></td>
                     </tr>
                     {% endfor %}
@@ -47,6 +46,7 @@
             </table>
             <hr/>
             <a href="{% url "practice:relay_novel" %}" class="btn btn-primary">게시판 목록</a>
+            <a href="{% url "practice:post_new" %}" class="btn btn-primary">새글쓰기</a>
         </div>
     </div>
 </div>
