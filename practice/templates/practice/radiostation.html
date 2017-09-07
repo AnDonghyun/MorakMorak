@@ -1,4 +1,4 @@
-{% extends "hub/layout.html" %}
+{% extends "practice/layout.html" %}
 
 {% block content %}
 
@@ -31,30 +31,22 @@
                         <th>title</th>
                         <th>author</th>
                         <th>updated_at</th>
-                        <th>상태</th>
+                        <th>공유</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for post in novel_list %}
+                    {% for radiostation in radiostation_list %}
                     <tr>
-                        <td>{{ post.id }}</td>
-                        <td><a href="{% url "hub:post_detail" post.id %}">
-                            {{ post.title }}
-                        </a></td>
-
-                        <td><small>by {{ post.author }}</small></td>
-                        <td><small>at {{ post.updated_at }}</small></td>
-                        <td><small>{% if post.status == 'd' %}작성중{% endif %}
-                            {% if post.status == 'f' %}작성완료{% endif %}
-                            {% if post.status == 'p' %}출판{% endif %}
-                        </small></td>
+                        <td>{{ RadioStation.id }}</td>
+                        <td>{{ RadioStation.title }}</a></td>
+                        <td><small>by {{ RadioStation.author }}</small></td>
+                        <td><small>at {{ RadioStation.updated_at }}</small></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
             <hr/>
-            <a href="{% url "hub:hub_list" %}" class="btn btn-primary">게시판 목록</a>
-            <a href="{% url "hub:post_new" %}" class="btn btn-default">새글쓰기</a>
+            <a href="{% url "practice:radio_station" %}" class="btn btn-primary">게시판 목록</a>
         </div>
     </div>
 </div>
