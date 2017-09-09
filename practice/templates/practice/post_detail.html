@@ -18,11 +18,11 @@
                 <ul>
                     {% for sequel in post.comment_set.all %}
                     <li>
-                        {{ RelayNovelSequel.summary }}
+                        {{ sequel.summary }}
 
-                        <small> {{ RelayNovelSequel.content }}</small>
-                        <small>created at {{ RelayNovelSequel.created_at }}</small>
-                        <small>updated at {{ RelayNovelSequel.updated_at }}</small>
+                        <small> {{ sequel.content }}</small>
+                        <small>created at {{ sequel.created_at }}</small>
+                        <small>updated at {{ sequel.updated_at }}</small>
                     </li>
                     {% endfor %}
                 </ul>
