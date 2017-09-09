@@ -37,7 +37,7 @@
                 <tbody>
                     {% for post in novel_list %}
                     <tr>
-                        {% if post.status == 'p' %}
+                        {% if post.is_shared %}
                             <td>{{ post.id }}</td>
                             <td>
                                 {{ post.title }}
@@ -45,10 +45,7 @@
 
                             <td><small>by {{ post.author }}</small></td>
                             <td><small>at {{ post.updated_at }}</small></td>
-                            <td><small>{% if post.status == 'd' %}작성중{% endif %}
-                                {% if post.status == 'f' %}작성완료{% endif %}
-                                {% if post.status == 'p' %}출판{% endif %}
-                            </small></td>
+                            <td><small>{{ post.is_shared }}</small></td>
                         </tr>
                         {% endif %}
                     {% endfor %}
