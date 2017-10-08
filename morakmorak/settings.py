@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'hub',
     'practice',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'morakmorak', 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+
+#로그인/회원가입 관련 SETTINGS
+
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/accounts/profile'
+LOGOUT_REDIRECT_URL = None
+AUTH_USER_MODEL = 'auth.User'
