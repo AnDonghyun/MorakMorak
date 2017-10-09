@@ -1,0 +1,56 @@
+
+{% extends "practice/layout.html" %}
+
+{% block content %}
+
+<!--
+<form action="" method="get">
+    <input type="text" name="q" value="{{ q }}" />
+    <input type="submit" value="검색" class="btn btn-primary" />
+</form>   
+-->
+<div class="container">
+    <div class ="row">
+        <div class="col-sm-12">
+            <div class="alert alert-info">         
+
+            </div>
+
+            
+
+            <p>
+                <form action = "" method="get">
+                    <input type="text" name="q" value="{{ q }}" />
+                    <input type="submit" value="검색" class="btn btn-primary"/>
+                </form>
+            </p>
+
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>title</th>
+                        <th>author</th>
+                        <th>updated_at</th>
+                        <th>공유</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for radiostation in radiostation_list %}
+                    <tr>
+                        <td>{{ RadioStation.id }}</td>
+                        <td>{{ RadioStation.title }}</a></td>
+                        <td><small>by {{ RadioStation.author }}</small></td>
+                        <td><small>at {{ RadioStation.updated_at }}</small></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <hr/>
+            <a href="{% url "practice:radio_station" %}" class="btn btn-primary">게시판 목록</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

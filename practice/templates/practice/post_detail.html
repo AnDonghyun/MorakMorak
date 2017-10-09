@@ -1,0 +1,39 @@
+
+{% extends "practice/layout.html" %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>{{ post.title }}</h2>
+
+                {{ post.content|linebreaks }}
+
+                <hr/>
+
+                <h3>Series</h3>
+                <ul>
+                    {% for sequel in post.comment_set.all %}
+                    <li>
+                        {{ sequel.summary }}
+
+                        <small> {{ sequel.content }}</small>
+                        <small>created at {{ sequel.created_at }}</small>
+                        <small>updated at {{ sequel.updated_at }}</small>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <hr/>
+                <a href="{% url "practice:relay_novel" %}" class="btn btn-primary">글 목록</a>
+                <a href="{% url "practice:post_edit" post.id %}" class="btn btn-default">수정</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
