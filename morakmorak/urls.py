@@ -25,9 +25,11 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('accounts.urls')), #장고 기본 auth앱과 연동해서 사용하므로, namespace 적용하지 않음!
+    url(r'^accounts/', include('accounts.urls')), #장고 기본 auth앱과 연동해서 사용하므로, namespace 적용하지 않음! 
+    url(r'^accounts/', include('allauth.urls')), #include를 사용할 시에는 url에 $를 표시하면 안됨. $ 표시할 경우 패턴매칭 끝남.
     url(r'^hub/', include('hub.urls', namespace='hub')),
     url(r'^practice/', include('practice.urls', namespace='practice')),
+   
 ]
 
 
