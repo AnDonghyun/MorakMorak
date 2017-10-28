@@ -19,8 +19,8 @@ from django.contrib import admin
 from django.shortcuts import redirect
 
 
-#def root(request):
-#    return redirect('첫화면으로 지정할 html file')
+def root(request):
+    return redirect('firstpage.html')
 
 
 urlpatterns = [
