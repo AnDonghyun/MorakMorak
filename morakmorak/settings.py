@@ -96,8 +96,8 @@ WSGI_APPLICATION = 'morakmorak.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'morakmorak',
-        'USER': 'root',
+        'NAME': 'morak',
+        'USER': 'root', 
         'PASSWORD': 'ahfkrahfkr!',
         'HOST': '67.205.149.162',
         'PORT': '3306',
